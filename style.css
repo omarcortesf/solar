@@ -1,0 +1,40 @@
+body, html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    
+}
+.container-main{ 
+    background-image: url("img/fondo_1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+.row{
+    margin: 0;
+    padding: 0;
+}
+.content-principal{
+    width: 90%;
+    border: 1px solid #ffffff;
+}
+.instant-txt{
+    font-size: 117px;
+    color: #03BDD2;
+}
+.instant-txt img{
+    width: 114px;
+}
+span{
+    top: 0;
+    font-size: 53px;
+}
+.principal-l{
+    background-color: rgba(256, 256, 256, 0.2);
+    
+}
