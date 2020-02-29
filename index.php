@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-
-
     <div class="container-main">
         <div class="content-principal">
             <div class="row">

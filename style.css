@@ -20,15 +20,19 @@ body, html{
     padding: 0;
 }
 .content-principal{
-    width: 90%;
+    width: 70%;
+    height: 70%;
     border: 1px solid #ffffff;
 }
 .instant-txt{
-    font-size: 117px;
+    display: flex;
+    align-items: center;
+    font-size: 4rem;
     color: #03BDD2;
 }
 .instant-txt img{
-    width: 114px;
+    width: 5rem;
+    height: 5rem;
 }
 span{
     top: 0;
