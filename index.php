@@ -13,64 +13,69 @@
         <div class="content-principal">
             <div class="row">
                 <div class="col-6 principal-l">
-                    <div class="instant-txt"><img src="img/arrow_down.png" alt=""><p>99.1 <span>kW</span></p></div>
-                    <div>INSTANTÁNEA</div>
-                    <div>Lorem ipsum dolor sit amet</div>
+                    <div class="instant-txt"><img src="img/arrow_down_w.png" alt=""><p>99.1 <span>kW</span></p></div>
+                    <p class="principal-l-text">INSTANTÁNEA</p>
+                    <p class="principal-l-textlorem">Lorem ipsum dolor sit amet</p>
                 </div>
                 <div class="col-6 principal-r">
-                    <div>PANEL DE MONITOREO | img</div>
-                    <div>img</div>
+                    <div class="principal-r-top">
+                        <div class="r-txt">PANEL DE MONITOREO</div>
+                        <div><img src="img/energon_logo.png" alt=""></div>
+                    </div>
+                    <div class="principal-r-buttom">
+                        <img src="img/logos_gob.png" alt="">
+                    </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row nrgyrow">
                 <div class="col-3">
-                    <div>124 kW</div>
-                    <div>INSTALADA</div>
-                    <div>Lorem ipsum dolor sit amet</div>
+                    <div class="nrgy-number">124 <span>kW</span></div>
+                    <p class="nrgy-text">INSTALADA</p>
+                    <p class="nrgy-xtratxt">Lorem ipsum dolor sit amet</p>
                 </div>
                 <div class="col-3">
-                    <div>23.2 kW</div>
-                    <div>DIARIA</div>
-                    <div>Lorem ipsum dolor sit amet</div>
+                    <div class="nrgy-number">23.2 <span>kW</span></div>
+                    <p class="nrgy-text">DIARIA</p>
+                    <p class="nrgy-xtratxt">Lorem ipsum dolor sit amet</p>
                 </div>
                 <div class="col-3">
-                    <div>32.1 kW</div>
-                    <div>MENSUAL</div>
-                    <div>Lorem ipsum dolor sit amet</div>
+                    <div class="nrgy-number">32.1 <span>kW</span></div>
+                    <p class="nrgy-text">MENSUAL</p>
+                    <p class="nrgy-xtratxt">Lorem ipsum dolor sit amet</p>
                 </div>
                 <div class="col-3">
-                    <div>3,340 kW</div>
-                    <div>POTENCIA ACUMULADA</div>
-                    <div>Lorem ipsum dolor sit amet</div>
+                    <div class="nrgy-number">3,340 <span>kW</span></div>
+                    <p class="nrgy-text">POTENCIA ACUMULADA</p>
+                    <p class="nrgy-xtratxt">Lorem ipsum dolor sit amet</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-4">
-                    <div>img</div>
+            <div class="row wearow">
+                <div class="col-4 wea-order">
+                    <div><img src="img/sol.png" alt=""></div>
                     <div>
-                        <div>01.1|UV</div>
-                        <div>RADIACIÓN SOLAR</div>
+                        <div class="wea-txt">01.1 | UV</div>
+                        <div class="wea-descrip">RADIACIÓN SOLAR</div>
                     </div>
                 </div>
-                <div class="col-2">
-                    <div>img</div>
+                <div class="col-2 wea-order">
+                    <div><img src="img/temperatura.png" alt=""></div>
                     <div>
-                        <div>23ºC</div>
-                        <div>TEMPERARTURA</div>
+                        <div class="wea-txt">23ºC</div>
+                        <div class="wea-descrip">TEMPERARTURA</div>
                     </div>
                 </div>
-                <div class="col-4">
-                    <div>img</div>
+                <div class="col-4 wea-order">
+                    <div><img src="img/aire.png" alt=""></div>
                     <div>
-                        <div>5 km/h</div>
-                        <div>VELOCIDAD DE VIENTO</div>
+                        <div class="wea-txt">5 km/h</div>
+                        <div class="wea-descrip">VELOCIDAD DE VIENTO</div>
                     </div>
                 </div>
-                <div class="col-2">
-                    <div>img</div>
+                <div class="col-2 wea-order wea-order-got">
+                    <div><img src="img/gota.png" alt=""></div>
                     <div>
-                        <div>40%</div>
-                        <div>HUMEDAD</div>
+                        <div class="wea-txt">40%</div>
+                        <div class="wea-descrip">HUMEDAD</div>
                     </div>
                 </div>
             </div>

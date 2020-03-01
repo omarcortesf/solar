@@ -5,7 +5,7 @@ body, html{
     
 }
 .container-main{ 
-    background-image: url("img/fondo_1.png");
+    background-image: url("img/fondo_b.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -21,24 +21,118 @@ body, html{
 }
 .content-principal{
     width: 70%;
-    height: 70%;
-    border: 1px solid #ffffff;
+    
+    /* border: 1px solid #000000; */
 }
 .instant-txt{
     display: flex;
     align-items: center;
-    font-size: 4rem;
-    color: #03BDD2;
+    font-size: 6rem;
+    color: #0071BC;
 }
 .instant-txt img{
-    width: 5rem;
-    height: 5rem;
+    width: 6rem;
+    height: 6rem;
 }
 span{
     top: 0;
-    font-size: 53px;
+    font-size: 3rem;
 }
 .principal-l{
-    background-color: rgba(256, 256, 256, 0.2);
+    background-color: rgba(256, 256, 256, 0.7);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.principal-l-text{
+    font-size: 2.5rem;
+    line-height: 30px;
+    font-weight: 300;
+    color: #9E9A9A;
+}
+.principal-l-textlorem{
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #B7B7FF;
+}
+.nrgyrow{
+    margin:2rem 0 2rem 0; 
+}
+.nrgy-number{
+    font-size: 3.5rem;
+    color: #0071BC;
+    text-align: center;
+}
+.nrgy-number span{
+    font-size: 2rem;
+}
+.nrgy-text{
+    font-size: 1.3rem;
+    line-height: 10px;
+    font-weight: 300;
+    text-align: center;
+    color: #000000;
+}
+.nrgy-xtratxt{
+    font-size: .8rem;
+    line-height: 10px;
+    text-align: center;
+    color: #000000;
+}
+.wearow{
+    background-color: rgba(3, 189, 210, 0.4);
+    border-radius: 50px;
+    padding: 5px;
+}
+.wea-order{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: #ffffff solid 1px;
+    padding: 0;
+}
+.wea-order img{
     
+    width: 80%;
+}
+.wea-order-got{
+    border: none;
+}
+.wea-txt{
+    font-size: 2rem;
+    text-align: center;
+}
+.wea-descrip{
+    font-size: 1rem;
+    font-weight: 300;
+}
+.principal-r{
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+}
+.principal-r-top{
+    background-color: rgba(256, 256, 256, 0.7);
+    display: flex;
+    border-radius: 50px;
+    padding: 30px;
+    justify-content: flex-end;
+    align-items: center;
+}
+.principal-r-top img{
+    width: 80%;
+}
+.r-txt{
+    font-size: 1.5rem ;
+    color: #0071BC;
+    border-right: 2px solid #0071BC;
+    padding-right: 20px;
+    font-weight: 400;
+    margin-right: 20px;
+}
+.principal-r-buttom{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
 }
