@@ -1,3 +1,14 @@
+<?php 
+
+
+    $conn = mysqli_connect("localhost","root","", "ElectricalSystem");
+    $sql = "SELECT Instantanea, Diaria, Mensual, Acumulada  FROM Fotovoltaico ORDER BY id DESC LIMIT 1";
+    $result = mysqli_query($conn, $sql);
+    $resutCheck = mysqli_fetch_assoc($result);
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,9 +24,8 @@
         <div class="content-principal">
             <div class="row">
                 <div class="col-6 principal-l">
-                    <div class="instant-txt"><img src="img/arrow_down_w.png" alt=""><p>99.1 <span>kW</span></p></div>
+                    <div class="instant-txt"><img src="img/arrow_down_w.png" alt=""><p><?php echo $resutCheck['Instantanea'];?> <span>kW</span></p></div>
                     <p class="principal-l-text">INSTANTÁNEA</p>
-                    <p class="principal-l-textlorem">Lorem ipsum dolor sit amet</p>
                 </div>
                 <div class="col-6 principal-r">
                     <div class="principal-r-top">
@@ -29,24 +39,20 @@
             </div>
             <div class="row nrgyrow">
                 <div class="col-3">
-                    <div class="nrgy-number">124 <span>kW</span></div>
+                    <div class="nrgy-number">370<span>kW</span></div>
                     <p class="nrgy-text">INSTALADA</p>
-                    <p class="nrgy-xtratxt">Lorem ipsum dolor sit amet</p>
                 </div>
                 <div class="col-3">
-                    <div class="nrgy-number">23.2 <span>kW</span></div>
+                    <div class="nrgy-number"><?php echo $resutCheck['Diaria'];?> <span>kW</span></div>
                     <p class="nrgy-text">DIARIA</p>
-                    <p class="nrgy-xtratxt">Lorem ipsum dolor sit amet</p>
                 </div>
                 <div class="col-3">
-                    <div class="nrgy-number">32.1 <span>kW</span></div>
+                    <div class="nrgy-number"><?php echo $resutCheck['Mensual'];?> <span>kW</span></div>
                     <p class="nrgy-text">MENSUAL</p>
-                    <p class="nrgy-xtratxt">Lorem ipsum dolor sit amet</p>
                 </div>
                 <div class="col-3">
-                    <div class="nrgy-number">3,340 <span>kW</span></div>
+                    <div class="nrgy-number"><?php echo $resutCheck['Acumulada'];?> <span>kW</span></div>
                     <p class="nrgy-text">POTENCIA ACUMULADA</p>
-                    <p class="nrgy-xtratxt">Lorem ipsum dolor sit amet</p>
                 </div>
             </div>
             <div class="row wearow">
