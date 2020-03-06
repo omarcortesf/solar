@@ -1,0 +1,16 @@
+<html>
+<header>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+</header>
+<body>
+	<div id="root"></div>
+	<p>Please check the console log of your browser.</p>
+	<script>
+        var socket = io.connect('http://localhost:3000', { 'forceNew': true });
+        socket.on('messages', function(data) {
+            console.log(data);
+        });
+    
+    </script>
+</body>
+</html>
