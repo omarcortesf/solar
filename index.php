@@ -1,8 +1,8 @@
-<?php 
-    $conn = mysqli_connect("localhost","root","", "ElectricalSystem");
-    $sql = "SELECT Instantanea, Diaria, Mensual, Acumulada  FROM Fotovoltaico ORDER BY id DESC LIMIT 1";
-    $result = mysqli_query($conn, $sql);
-    $resutCheck = mysqli_fetch_assoc($result);
+<?php
+$conn = mysqli_connect("localhost", "root", "", "ElectricalSystem");
+$sql = "SELECT Instantanea, Diaria, Mensual, Acumulada  FROM Fotovoltaico ORDER BY id DESC LIMIT 1";
+$result = mysqli_query($conn, $sql);
+$resutCheck = mysqli_fetch_assoc($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,7 @@
         <div class="content-principal">
             <div class="row">
                 <div class="col-6 principal-l">
-                    <div class="instant-txt"><img src="img/arrow_down_w.png" alt=""><p><?php echo $resutCheck['Instantanea'];?> <span>kW</span></p></div>
+                    <div class="instant-txt"><img src="img/arrow_down_w.png" alt=""><p id="instantanea"><?php echo $resutCheck['Instantanea']; ?> <span>kW</span></p></div>
                     <p class="principal-l-text">INSTANTÁNEA</p>
                 </div>
                 <div class="col-6 principal-r">
@@ -34,19 +34,19 @@
             </div>
             <div class="row nrgyrow">
                 <div class="col-3">
-                    <div class="nrgy-number">370<span>kW</span></div>
+                    <div class="nrgy-number">370 <span>kW</span></div>
                     <p class="nrgy-text">INSTALADA</p>
                 </div>
                 <div class="col-3">
-                    <div class="nrgy-number"><?php echo $resutCheck['Diaria'];?> <span>kW</span></div>
+                    <div class="nrgy-number" id="diaria"><?php echo $resutCheck['Diaria']; ?> <span>kW</span></div>
                     <p class="nrgy-text">DIARIA</p>
                 </div>
                 <div class="col-3">
-                    <div class="nrgy-number"><?php echo $resutCheck['Mensual'];?> <span>kW</span></div>
+                    <div class="nrgy-number" id="mensual"><?php echo $resutCheck['Mensual']; ?> <span>kW</span></div>
                     <p class="nrgy-text">MENSUAL</p>
                 </div>
                 <div class="col-3">
-                    <div class="nrgy-number"><?php echo $resutCheck['Acumulada'];?> <span>kW</span></div>
+                    <div class="nrgy-number" id="acumulada"><?php echo $resutCheck['Acumulada']; ?> <span>kW</span></div>
                     <p class="nrgy-text">POTENCIA ACUMULADA</p>
                 </div>
             </div>
@@ -85,64 +85,20 @@
     <script src="js/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script>    
-// CHANGE 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+<script src="js/index.js"></script>
+<script>
 
-
-function API_weather() {
-    return new Promise((resolve, reject) => {
-        $.ajax({
-            url:
-                'http://api.openweathermap.org/data/2.5/weather?lat=20.673924&lon=-103.365449&appid=727b921beb636692dd0606184ecbc711',
-            type: 'GET',
-            success: function(result, status, xhr) {
-                var temperatura = Math.trunc(result.main.temp - 273);
-                var viento = result.wind.speed;
-                var humedad = result.main.humidity;
-                resolve({
-                    temperatura: temperatura,
-                    viento: viento,
-                    humedad: humedad,
-                });
-            },
-            error: function(err) {
-                reject(err);
-            },
-        });
-    });
-}
-
-function API_uv() {
-    return new Promise((resolve, reject) => {
-        $.ajax({
-            url:
-                'http://api.openweathermap.org/data/2.5/uvi?appid=727b921beb636692dd0606184ecbc711&lat=20.673924&lon=-103.365449',
-            type: 'GET',
-            success: function(result2, status, xhr) {
-                var sol_uv = result2.value;
-                resolve({ sol_uv: sol_uv });
-            },
-            error: function(err) {
-                reject(err);
-            },
-        });
-    });
-}
-window.onload = function() {
-    var prom1 = API_weather();
-    var prom2 = API_uv();
-    Promise.all([prom1, prom2])
-        .then(result => {
-            $('#sol_uv').html(result[1].sol_uv+ '| UV');
-            $('#temp').html(result[0].temperatura + 'ºC');
-            $('#wind').html(result[0].viento + 'km/h');
-            $('#hum').html(result[0].humedad + '%');
+    window.onload = function() {
+        getAPIsData().then(function(data){
+            connect2Socket();
+            setApiDataInDom(data);
+            uploadAPIData(data);
         })
-        .catch(error => {
-            console.error(error);
+        .catch(function(err){
+            console.log(err);
         });
-};
-
+    }
 </script>
 </body>
 </html>
