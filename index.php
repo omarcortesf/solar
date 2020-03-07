@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "ElectricalSystem");
+$conn = mysqli_connect("localhost", "logger", "energysystem", "ElectricalSystem");
 $sql = "SELECT Instantanea, Diaria, Mensual, Acumulada  FROM Fotovoltaico ORDER BY id DESC LIMIT 1";
 $result = mysqli_query($conn, $sql);
 $resutCheck = mysqli_fetch_assoc($result);

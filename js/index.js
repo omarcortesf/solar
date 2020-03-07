@@ -81,7 +81,7 @@ function uploadAPIData(data) {
 }
 
 function connect2Socket() {
-    socket = io.connect('http://localhost:3000');
+    socket = io.connect('http://62.151.177.198');
 
     socket.on('electric-data', function(data) {
         console.log(data);

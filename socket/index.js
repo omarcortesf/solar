@@ -4,8 +4,8 @@ const mysql = require('mysql2');
 // create the connection to database
 const connection = mysql.createConnection({
     host: '127.0.0.1',
-    user: 'root',
-    password: "",
+    user: 'logger',
+    password: "energysystem",
     database: 'ElectricalSystem'
 });
 
@@ -24,7 +24,7 @@ io.on('connection', socket => {
             };
             socket.emit('electric-data', data);
         });
-    }, 5 * 60 * 1000);
+    }, 5*60*1000);
 
 
     socket.on("save-api-data", (data) => {
@@ -36,4 +36,5 @@ io.on('connection', socket => {
 });
 
 
-io.listen(3000);
+io.listen(8000);
+console.log("Socket running in port 3000");
