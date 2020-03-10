@@ -19,7 +19,7 @@ $resutCheck = mysqli_fetch_assoc($result);
         <div class="content-principal">
             <div class="row">
                 <div class="col-6 principal-l">
-                    <div class="instant-txt"><img src="img/arrow_down_w.png" alt=""><p id="instantanea"><?php echo $resutCheck['Instantanea']; ?> <span>kW</span></p></div>
+                    <div class="instant-txt"><img src="img/arrow_down_w.png" alt=""><p id="instantanea"><?php echo $resutCheck['Instantanea']; ?> <span>kWh</span></p></div>
                     <p class="principal-l-text">INSTANTÁNEA</p>
                 </div>
                 <div class="col-6 principal-r">
@@ -34,20 +34,20 @@ $resutCheck = mysqli_fetch_assoc($result);
             </div>
             <div class="row nrgyrow">
                 <div class="col-3">
-                    <div class="nrgy-number">370 <span>kW</span></div>
+                    <div class="nrgy-number">370 <span>kWh</span></div>
                     <p class="nrgy-text">INSTALADA</p>
                 </div>
                 <div class="col-3">
                     <div class="nrgy-number" id="diaria"><?php echo $resutCheck['Diaria']; ?> <span>kW</span></div>
-                    <p class="nrgy-text">DIARIA</p>
+                    <p class="nrgy-text">ENERGÍA DIARIA</p>
                 </div>
                 <div class="col-3">
                     <div class="nrgy-number" id="mensual"><?php echo $resutCheck['Mensual']; ?> <span>kW</span></div>
-                    <p class="nrgy-text">MENSUAL</p>
+                    <p class="nrgy-text">ENERGÍA MENSUAL</p>
                 </div>
                 <div class="col-3">
-                    <div class="nrgy-number" id="acumulada"><?php echo $resutCheck['Acumulada']; ?> <span>kW</span></div>
-                    <p class="nrgy-text">POTENCIA ACUMULADA</p>
+                    <div class="nrgy-number" id="acumulada"><?php echo $resutCheck['Acumulada']; ?> <span>kWh</span></div>
+                    <p class="nrgy-text">ENERGÍA ACUMULADA</p>
                 </div>
             </div>
             <div class="row wearow">
