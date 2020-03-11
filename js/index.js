@@ -106,18 +106,18 @@ function connect2Socket() {
             });
     });
 }
-const input = $("#jsinstantanea");
-const value = addCommas(input.value);
-const input = $("#jsdiaria");
-const value = addCommas(input.value);
-const input = $("#jsmensual");
-const value = addCommas(input.value);
-const input = $("#jsarboles");
-const value = addCommas(input.value);
-const input = $("#jsco2");
-const value = addCommas(input.value);
-const input = $("#jshogares");
-const value = addCommas(input.value);
+const inputinstantanea = $("#jsinstantanea");
+const valueinstantanea = addCommas(inputinstantanea.value);
+const inputdiaria = $("#jsdiaria");
+const valuediaria = addCommas(inputdiaria.value);
+const inputmensual = $("#jsmensual");
+const valuemensual = addCommas(inputmensual.value);
+const inputarboles = $("#jsarboles");
+const valuearboles = addCommas(inputarboles.value);
+const inputco2 = $("#jsco2");
+const valueco2 = addCommas(inputco2.value);
+const inputhogares = $("#jshogares");
+const valuehogares = addCommas(inputhogares.value);
 
 function addCommas(num) {
     var characters = parseInt(num, 10).toString();
