@@ -106,6 +106,18 @@ function connect2Socket() {
             });
     });
 }
+const input = $("#jsinstantanea");
+const value = addCommas(input.value);
+const input = $("#jsdiaria");
+const value = addCommas(input.value);
+const input = $("#jsmensual");
+const value = addCommas(input.value);
+const input = $("#jsarboles");
+const value = addCommas(input.value);
+const input = $("#jsco2");
+const value = addCommas(input.value);
+const input = $("#jshogares");
+const value = addCommas(input.value);
 
 function addCommas(num) {
     var characters = parseInt(num, 10).toString();

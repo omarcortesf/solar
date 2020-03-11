@@ -19,6 +19,7 @@ $resutCheck = mysqli_fetch_assoc($result);
         <div class="content-principal">
             <div class="row">
                 <div class="col-6 principal-l">
+                    <input id="jsinstantanea" type="hidden" value="<?php echo $resutCheck['Instantanea'] ?>">
                     <div class="instant-txt"><img src="img/arrow_down_w.png" alt=""><p id="instantanea"><?php echo $resutCheck['Instantanea']; ?> <span>kWh</span></p></div>
                     <p class="principal-l-text">POTENCIA INSTANTÁNEA</p>
                 </div>
@@ -38,32 +39,38 @@ $resutCheck = mysqli_fetch_assoc($result);
                     <p class="nrgy-text">POTENCIA INSTALADA</p>
                 </div>
                 <div class="col-3">
+                    <input id="jsdiaria" type="hidden" value="<?php echo $resutCheck['Diaria'] ?>">
                     <div class="nrgy-number" id="diaria"><?php echo $resutCheck['Diaria']; ?> <span>kW</span></div>
                     <p class="nrgy-text">ENERGÍA DIARIA</p>
                 </div>
                 <div class="col-3">
+                    <input id="jsmensual" type="hidden" value="<?php echo $resutCheck['Mensual'] ?>">
                     <div class="nrgy-number" id="mensual"><?php echo $resutCheck['Mensual']; ?> <span>kW</span></div>
                     <p class="nrgy-text">ENERGÍA MENSUAL</p>
                 </div>
                 <div class="col-3">
+                    <input id="jsacumulada" type="hidden" value="<?php echo $resutCheck['Acumulada'] ?>">
                     <div class="nrgy-number" id="acumulada"><?php echo $resutCheck['Acumulada']; ?> <span>kWh</span></div>
                     <p class="nrgy-text">ENERGÍA ACUMULADA</p>
                 </div>
             </div>
             <div class="row extra-nrgy">
             <div class="col-6">
-            <div class="nrgy-number" id="arboles"><?php echo $resutCheck['Arboles']; ?></div>
+                <input id="jsarboles" type="hidden" value="<?php echo $resutCheck['Arboles'] ?>">
+                <div class="nrgy-number" id="arboles"><?php echo $resutCheck['Arboles']; ?></div>
                     <p class="nrgy-text">Árboles equivalentes</p>
-                </div>
-                <div class="col-6">
-                    <div class="nrgy-number" id="co2"><?php echo $resutCheck['Co2']; ?> <span></span></div>
-                    <p class="nrgy-text">CO<sub>2</sub></p>
-                </div>
+            </div>
+            <div class="col-6">
+                <input id="jsco2" type="hidden" value="<?php echo $resutCheck['Co2'] ?>">
+                <div class="nrgy-number" id="co2"><?php echo $resutCheck['Co2']; ?> <span></span></div>
+                <p class="nrgy-text">Tm de CO<sub>2</sub></p>
+            </div>
             </div>
             <div class="row wearow">
                 <div class="col-4 wea-order">
                     <div><img src="img/Sol.png" alt=""></div>
                     <div>
+                        <input id="jshogares" type="hidden" value="<?php echo $resutCheck['Hogares'] ?>">
                         <div id="hogares" class="wea-txt"><?php echo $resutCheck['Hogares']; ?><span>W/m2</span></div>
                         <div class="wea-descrip">RADIACIÓN SOLAR</div>
                     </div>
