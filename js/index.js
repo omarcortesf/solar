@@ -109,10 +109,18 @@ function connect2Socket() {
 
 
 function addCommas(num) {
+    var decimal = num.toString().split(".");
+    if(decimal.length>1){
+        decimal = decimal[1];
+    }
+    else {
+        decimal = null;
+    }
     var characters = parseInt(num, 10).toString();
     var output = '';
     for (var offset = characters.length; offset > 0; offset -= 3) {
         output = characters.slice(Math.max(offset - 3, 0), offset) + (output ? ',' + output : '');
     }
+    output += decimal? "."+decimal.slice(0,2): "";
     return output;
 }
