@@ -108,17 +108,24 @@ $resutCheck = mysqli_fetch_assoc($result);
 
     window.onload = function() {
         const inputinstantanea = $("#jsinstantanea");
-        const valueinstantanea = addCommas(inputinstantanea.val());
         const inputdiaria = $("#jsdiaria");
-        const valuediaria = addCommas(inputdiaria.val());
         const inputmensual = $("#jsmensual");
-        const valuemensual = addCommas(inputmensual.val());
+        const inputacumulada = $("#jsacumulada");
         const inputarboles = $("#jsarboles");
-        const valuearboles = addCommas(inputarboles.val());
         const inputco2 = $("#jsco2");
-        const valueco2 = addCommas(inputco2.val());
         const inputhogares = $("#jshogares");
-        const valuehogares = addCommas(inputhogares.val());
+
+        const data = {
+            instantanea: inputinstantanea,
+            diaria: inputdiaria,
+            mensual: inputmensual,
+            acumulada: inputacumulada,
+            arboles: inputarboles,
+            co2: inputco2,
+            hogares: inputhogares
+        };
+        
+        setElectricData(data);
 
         getAPIsData().then(function(data){
             connect2Socket();
