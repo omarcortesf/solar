@@ -35,7 +35,7 @@ $resutCheck = mysqli_fetch_assoc($result);
             </div>
             <div class="row nrgyrow">
                 <div class="col-3">
-                    <div class="nrgy-number">370 <span>kWh</span></div>
+                    <div class="nrgy-number">370 <span>kW</span></div>
                     <p class="nrgy-text">POTENCIA INSTALADA</p>
                 </div>
                 <div class="col-3">
@@ -63,7 +63,7 @@ $resutCheck = mysqli_fetch_assoc($result);
             <div class="col-6">
                 <input id="jsco2" type="hidden" value="<?php echo $resutCheck['Co2'] ?>">
                 <div class="nrgy-number" id="co2"><?php echo $resutCheck['Co2']; ?> <span></span></div>
-                <p class="nrgy-text">Tm de CO<sub>2</sub></p>
+                <p class="nrgy-text">Ton CO<sub>2</sub></p>
             </div>
             </div>
             <div class="row wearow">

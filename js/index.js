@@ -72,13 +72,13 @@ function setApiDataInDom(data) {
 
 function setElectricData(data) {
     var instantanea = addCommas(data.instantanea);
-    $("#instantanea").html(instantanea + " <span>kWh</span>");
+    $("#instantanea").html(instantanea + " <span>kW</span>");
     var diaria = addCommas(data.diaria);
-    $("#diaria").html(diaria + " <span>kW</span>");
+    $("#diaria").html(diaria + " <span>kWh</span>");
     var mensual = addCommas(data.mensual);
-    $("#mensual").html(mensual + " <span>kW</span>");
+    $("#mensual").html(mensual + " <span>kWh</span>");
     var acumulada = addCommas(data.acumulada);
-    $("#acumulada").html(acumulada + " <span>kW</span>");
+    $("#acumulada").html(acumulada + " <span>MWh</span>");
     var arboles = addCommas(data.arboles);
     $("#arboles").html(arboles );
     var co2 = addCommas(data.co2);
