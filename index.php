@@ -122,7 +122,7 @@ $resutCheck = mysqli_fetch_assoc($result);
             acumulada: inputacumulada.val(),
             arboles: inputarboles.val(),
             co2: inputco2.val(),
-            hogares: inputhogare.val()s
+            hogares: inputhogare.val()
         };
 
         setElectricData(data);
