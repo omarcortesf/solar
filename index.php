@@ -116,15 +116,15 @@ $resutCheck = mysqli_fetch_assoc($result);
         const inputhogares = $("#jshogares");
 
         const data = {
-            instantanea: inputinstantanea,
-            diaria: inputdiaria,
-            mensual: inputmensual,
-            acumulada: inputacumulada,
-            arboles: inputarboles,
-            co2: inputco2,
-            hogares: inputhogares
+            instantanea: inputinstantanea.val(),
+            diaria: inputdiaria.val(),
+            mensual: inputmensual.val(),
+            acumulada: inputacumulada.val(),
+            arboles: inputarboles.val(),
+            co2: inputco2.val(),
+            hogares: inputhogare.val()s
         };
-        
+
         setElectricData(data);
 
         getAPIsData().then(function(data){
