@@ -23,7 +23,7 @@ io.on('connection', socket => {
                 acumulada: results[0].Acumulada,
                 arboles: results[0].Arboles,
                 co2: results[0].Co2,
-                hogares: hogares[0],Hogares
+                hogares: results[0].Hogares
             };
             socket.emit('electric-data', data);
         });
