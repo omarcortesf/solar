@@ -84,7 +84,7 @@ function setElectricData(data) {
     var co2 = addCommas(data.co2);
     $("#co2").html(co2 + " <span>Tm de Co<sub>2</sub></span>");
     var hogares = addCommas(data.hogares);
-    $("#hogares").html(hogares + " <span>W/m2</span>");
+    $("#hogares").html(hogares + " W/m2");
 }
 
 function uploadAPIData(data) {

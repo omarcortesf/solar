@@ -71,7 +71,7 @@ $resutCheck = mysqli_fetch_assoc($result);
                     <div><img src="img/Sol.png" alt=""></div>
                     <div>
                         <input id="jshogares" type="hidden" value="<?php echo $resutCheck['Hogares'] ?>">
-                        <div id="hogares" class="wea-txt"><?php echo $resutCheck['Hogares']; ?><span>W/m2</span></div>
+                        <div id="hogares" class="wea-txt"><?php echo $resutCheck['Hogares']; ?></div>
                         <div class="wea-descrip">RADIACIÓN SOLAR</div>
                     </div>
                 </div>
