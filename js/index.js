@@ -6,7 +6,7 @@ function API_weather() {
             url: 'http://api.openweathermap.org/data/2.5/weather?lat=20.673924&lon=-103.365449&appid=727b921beb636692dd0606184ecbc711',
             type: 'GET',
             success: function(result, status, xhr) {
-                var temperatura = Math.trunc(result.main.temp - 273);
+                var temperatura = Math.trunc(result.main.temp - 269);
                 var viento = result.wind.speed;
                 var humedad = result.main.humidity;
                 resolve({
@@ -22,31 +22,32 @@ function API_weather() {
     });
 }
 
-function API_uv() {
-    return new Promise((resolve, reject) => {
-        $.ajax({
-            url: 'http://api.openweathermap.org/data/2.5/uvi?appid=727b921beb636692dd0606184ecbc711&lat=20.673924&lon=-103.365449',
-            type: 'GET',
-            success: function(result2, status, xhr) {
-                var sol_uv = result2.value;
-                resolve({ sol_uv: sol_uv });
-            },
-            error: function(err) {
-                reject(err);
-            },
-        });
-    });
-}
+// function API_uv() {
+//     return new Promise((resolve, reject) => {
+//         $.ajax({
+//             url: 'http://api.openweathermap.org/data/2.5/uvi?appid=727b921beb636692dd0606184ecbc711&lat=20.673924&lon=-103.365449',
+//             type: 'GET',
+//             success: function(result2, status, xhr) {
+//                 var sol_uv = result2.value;
+//                 resolve({ sol_uv: sol_uv });
+//             },
+//             error: function(err) {
+//                 reject(err);
+//             },
+//         });
+//     });
+// }
 
 function getAPIsData() {
     return new Promise(function(resolve, reject) {
         var prom1 = API_weather();
-        var prom2 = API_uv();
+        // var prom2 = API_uv();
 
-        Promise.all([prom1, prom2])
+        // Promise.all([prom1, prom2])
+        Promise.all([prom1])
             .then(result => {
                 const data = {
-                    uv: result[1].sol_uv,
+                    // uv: result[1].sol_uv,
                     temp: result[0].temperatura,
                     viento: result[0].viento,
                     humedad: result[0].humedad
@@ -63,17 +64,20 @@ function getAPIsData() {
 }
 
 function setApiDataInDom(data) {
-    $('#sol_uv').html(data.uv + ' | UV');
+    // $('#sol_uv').html(data.uv + ' | UV');
     $('#temp').html(data.temp + 'ºC');
     $('#wind').html(data.viento + ' km/h');
     $('#hum').html(data.humedad + '%');
 }
 
 function setElectricData(data) {
-    $("#instantanea").html(data.instantanea + " <span>kW</span>");
+    $("#instantanea").html(data.instantanea + " <span>kWh</span>");
     $("#diaria").html(data.diaria + " <span>kW</span>");
     $("#mensual").html(data.mensual + " <span>kW</span>");
     $("#acumulada").html(data.acumulada + " <span>kW</span>");
+    $("#arboles").html(data.arboles);
+    $("#co2").html(data.co2 + " <span>UNIDADES</span>");
+    $("#hogares").html(data.hogares + " <span>W/m2</span>");
 }
 
 function uploadAPIData(data) {

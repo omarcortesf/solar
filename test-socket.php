@@ -5,7 +5,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 //$conn = mysqli_connect("localhost","root","", "ElectricalSystem");
-$sql = "SELECT Instantanea, Diaria, Mensual, Acumulada  FROM Fotovoltaico ORDER BY id DESC LIMIT 1";
+$sql = "SELECT Instantanea, Diaria, Mensual, Acumulada, Arboles, Co2, Hogares  FROM Fotovoltaico ORDER BY id DESC LIMIT 1";
 
 print_r($conn);
 
@@ -44,7 +44,7 @@ while (true) {
     if($seconds % 3 === 0) {
         $seconds = 0;
         // $content = "The time is " . date("h:i:sa");
-        $content = $resutCheck['Instantanea'].'||'.$resutCheck['Diaria'].'||'.$resutCheck['Mensual'].'||'.$resutCheck['Acumulada'];
+        $content = $resutCheck['Instantanea'].'||'.$resutCheck['Diaria'].'||'.$resutCheck['Mensual'].'||'.$resutCheck['Acumulada'].'||'.$resutCheck['Arboles'].'||'.$resutCheck['Co2'].'||'.$resutCheck['Hogares'];
         $result = mysqli_query($conn, $sql);
         $resutCheck = mysqli_fetch_assoc($result);
 

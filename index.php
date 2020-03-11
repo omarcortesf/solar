@@ -1,6 +1,6 @@
 <?php
 $conn = mysqli_connect("localhost", "logger", "energysystem", "ElectricalSystem");
-$sql = "SELECT Instantanea, Diaria, Mensual, Acumulada  FROM Fotovoltaico ORDER BY id DESC LIMIT 1";
+$sql = "SELECT Instantanea, Diaria, Mensual, Acumulada, Arboles, Co2, Hogares  FROM Fotovoltaico ORDER BY id DESC LIMIT 1";
 $result = mysqli_query($conn, $sql);
 $resutCheck = mysqli_fetch_assoc($result);
 ?>
@@ -20,7 +20,7 @@ $resutCheck = mysqli_fetch_assoc($result);
             <div class="row">
                 <div class="col-6 principal-l">
                     <div class="instant-txt"><img src="img/arrow_down_w.png" alt=""><p id="instantanea"><?php echo $resutCheck['Instantanea']; ?> <span>kWh</span></p></div>
-                    <p class="principal-l-text">INSTANTÁNEA</p>
+                    <p class="principal-l-text">POTENCIA INSTANTÁNEA</p>
                 </div>
                 <div class="col-6 principal-r">
                     <div class="principal-r-top">
@@ -35,7 +35,7 @@ $resutCheck = mysqli_fetch_assoc($result);
             <div class="row nrgyrow">
                 <div class="col-3">
                     <div class="nrgy-number">370 <span>kWh</span></div>
-                    <p class="nrgy-text">INSTALADA</p>
+                    <p class="nrgy-text">POTENCIA INSTALADA</p>
                 </div>
                 <div class="col-3">
                     <div class="nrgy-number" id="diaria"><?php echo $resutCheck['Diaria']; ?> <span>kW</span></div>
@@ -50,25 +50,35 @@ $resutCheck = mysqli_fetch_assoc($result);
                     <p class="nrgy-text">ENERGÍA ACUMULADA</p>
                 </div>
             </div>
+            <div class="row extra-nrgy">
+            <div class="col-6">
+            <div class="nrgy-number" id="arboles"><?php echo $resutCheck['Arboles']; ?></div>
+                    <p class="nrgy-text">Árboles salvados</p>
+                </div>
+                <div class="col-6">
+                    <div class="nrgy-number" id="co2"><?php echo $resutCheck['Co2']; ?> <span></span></div>
+                    <p class="nrgy-text">CO<sub>2</sub> </p>
+                </div>
+            </div>
             <div class="row wearow">
                 <div class="col-4 wea-order">
                     <div><img src="img/Sol.png" alt=""></div>
                     <div>
-                        <div id="sol_uv" class="wea-txt"></div>
+                        <div id="hogares" class="wea-txt"><?php echo $resutCheck['Hogares']; ?><span>W/m2</span></div>
                         <div class="wea-descrip">RADIACIÓN SOLAR</div>
                     </div>
                 </div>
                 <div class="col-2 wea-order">
                     <div><img src="img/temperatura.png" alt=""></div>
                     <div>
-                        <div id="temp" class="wea-txt">23ºC</div>
+                        <div id="temp" class="wea-txt"></div>
                         <div class="wea-descrip">TEMPERARTURA</div>
                     </div>
                 </div>
                 <div class="col-4 wea-order">
                     <div><img src="img/aire.png" alt=""></div>
                     <div>
-                        <div id="wind" class="wea-txt">5 km/h</div>
+                        <div id="wind" class="wea-txt"></div>
                         <div class="wea-descrip">VELOCIDAD DE VIENTO</div>
                     </div>
                 </div>
