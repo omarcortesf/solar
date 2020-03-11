@@ -71,13 +71,20 @@ function setApiDataInDom(data) {
 }
 
 function setElectricData(data) {
-    $("#instantanea").html(data.instantanea + " <span>kWh</span>");
-    $("#diaria").html(data.diaria + " <span>kW</span>");
-    $("#mensual").html(data.mensual + " <span>kW</span>");
-    $("#acumulada").html(data.acumulada + " <span>kW</span>");
-    $("#arboles").html(data.arboles);
-    $("#co2").html(data.co2 + " <span>UNIDADES</span>");
-    $("#hogares").html(data.hogares + " <span>W/m2</span>");
+    var instantanea = addCommas(data.instantanea);
+    $("#instantanea").html(instantanea + " <span>kWh</span>");
+    var diaria = addCommas(data.diaria);
+    $("#diaria").html(diaria + " <span>kW</span>");
+    var mensual = addCommas(data.mensual);
+    $("#mensual").html(mensual + " <span>kW</span>");
+    var acumulada = addCommas(data.acumulada);
+    $("#acumulada").html(acumulada + " <span>kW</span>");
+    var arboles = addCommas(data.arboles);
+    $("#arboles").html(arboles );
+    var co2 = addCommas(data.co2);
+    $("#co2").html(co2 + " <span>Tm de Co<sub>2</sub></span>");
+    var hogares = addCommas(data.hogares);
+    $("#hogares").html(hogares + " <span>W/m2</span>");
 }
 
 function uploadAPIData(data) {
@@ -98,4 +105,13 @@ function connect2Socket() {
                 console.log(err);
             });
     });
+}
+
+function addCommas(num) {
+    var characters = parseInt(num, 10).toString();
+    var output = '';
+    for (var offset = characters.length; offset > 0; offset -= 3) {
+        output = characters.slice(Math.max(offset - 3, 0), offset) + (output ? ',' + output : '');
+    }
+    return output;
 }

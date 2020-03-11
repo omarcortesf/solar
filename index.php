@@ -53,11 +53,11 @@ $resutCheck = mysqli_fetch_assoc($result);
             <div class="row extra-nrgy">
             <div class="col-6">
             <div class="nrgy-number" id="arboles"><?php echo $resutCheck['Arboles']; ?></div>
-                    <p class="nrgy-text">Árboles salvados</p>
+                    <p class="nrgy-text">Árboles equivalentes</p>
                 </div>
                 <div class="col-6">
                     <div class="nrgy-number" id="co2"><?php echo $resutCheck['Co2']; ?> <span></span></div>
-                    <p class="nrgy-text">CO<sub>2</sub> </p>
+                    <p class="nrgy-text">CO<sub>2</sub></p>
                 </div>
             </div>
             <div class="row wearow">

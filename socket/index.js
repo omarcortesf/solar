@@ -9,7 +9,7 @@ const connection = mysql.createConnection({
     database: 'ElectricalSystem'
 });
 
-const query = "SELECT Instantanea, Diaria, Mensual, Acumulada  FROM Fotovoltaico ORDER BY id DESC LIMIT 1";
+const query = "SELECT Instantanea, Diaria, Mensual, Acumulada, Arboles, Co2, Hogares  FROM Fotovoltaico ORDER BY id DESC LIMIT 1";
 
 io.on('connection', socket => {
     console.log("Client connected");
@@ -20,7 +20,10 @@ io.on('connection', socket => {
                 instantanea: results[0].Instantanea,
                 diaria: results[0].Diaria,
                 mensual: results[0].Mensual,
-                acumulada: results[0].Acumulada
+                acumulada: results[0].Acumulada,
+                arboles: results[0].Arboles,
+                co2: results[0].Co2,
+                hogares: hogares[0],Hogares
             };
             socket.emit('electric-data', data);
         });
@@ -29,8 +32,8 @@ io.on('connection', socket => {
 
     socket.on("save-api-data", (data) => {
         console.log("SAVING API DATA")
-        connection.query(`INSERT INTO Clima ( Radiacion, Temperatura, Viento, Humedad)
-        VALUES ( '${data.uv}','${data.temp}','${data.viento}', '${data.humedad}');`);
+        connection.query(`INSERT INTO Clima ( Temperatura, Viento, Humedad)
+        VALUES ( '${data.temp}','${data.viento}', '${data.humedad}');`);
     });
 
 });
