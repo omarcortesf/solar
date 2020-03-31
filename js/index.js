@@ -98,6 +98,7 @@ function connect2Socket() {
         console.log(data);
         setElectricData(data);
         getAPIsData().then(function(data) {
+                showModal();
                 setApiDataInDom(data);
                 uploadAPIData(data);
             })
@@ -123,4 +124,21 @@ function addCommas(num) {
     }
     output += decimal? "."+decimal.slice(0,2): "";
     return output;
+}
+
+function showModal(){
+    var Modal = $("#Modal");
+    Modal.modal("show");
+
+    var video = document.getElementById("video");
+    video.currentTime = 0;
+    video.play();
+    video.onended =  function(){
+        Modal.modal("hide");
+    };
+    video.muted = false;
+
+    Modal.on('hide.bs.modal', function(){
+        video.pause();
+    });
 }

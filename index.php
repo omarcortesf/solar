@@ -99,21 +99,25 @@ $resutCheck = mysqli_fetch_assoc($result);
             </div>
         </div>
                 <!-- Button trigger modal -->
+                <!--
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal">
         Launch demo modal
         </button>
+        -->
 
         <!-- Modal -->
         <div class="modal" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
+            <!--
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            -->
             <div class="modal-body">
-            <video width="100%" controls autoplay>
+            <video width="100%" controls autoplay preload="auto" id="video" muted>
                 <source src="video/panel.mp4" type="video/mp4">
             </video>
             </div>
