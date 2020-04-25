@@ -86,7 +86,7 @@ $resutCheck = mysqli_fetch_assoc($result);
                 <div class="col-4 wea-order">
                     <div><img src="img/aire.png" alt=""></div>
                     <div>
-                        <div class="wea-txt">5.8</div>
+                        <div class="wea-txt">5.8 km/h</div>
                         <!-- <div id="wind" class="wea-txt"></div> -->
                         <div class="wea-descrip">VELOCIDAD DE VIENTO</div>
                     </div>
