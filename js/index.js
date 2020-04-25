@@ -99,7 +99,10 @@ function connect2Socket() {
         setElectricData(data);
         getAPIsData().then(function(data) {
                 showModal();
-                setApiDataInDom(data);
+                //Ajuste de servidor
+
+                
+                // setApiDataInDom(data); 
                 uploadAPIData(data);
             })
             .catch(function(err) {

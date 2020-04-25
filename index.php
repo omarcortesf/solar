@@ -78,21 +78,24 @@ $resutCheck = mysqli_fetch_assoc($result);
                 <div class="col-2 wea-order">
                     <div><img src="img/temperatura.png" alt=""></div>
                     <div>
-                        <div id="temp" class="wea-txt"></div>
+                        <div class="wea-txt">28º C</div>
+                        <!-- <div id="temp" class="wea-txt"></div> -->
                         <div class="wea-descrip">TEMPERARTURA</div>
                     </div>
                 </div>
                 <div class="col-4 wea-order">
                     <div><img src="img/aire.png" alt=""></div>
                     <div>
-                        <div id="wind" class="wea-txt"></div>
+                        <div class="wea-txt">5.8</div>
+                        <!-- <div id="wind" class="wea-txt"></div> -->
                         <div class="wea-descrip">VELOCIDAD DE VIENTO</div>
                     </div>
                 </div>
                 <div class="col-2 wea-order wea-order-got">
                     <div><img src="img/gota.png" alt=""></div>
                     <div>
-                        <div id="hum" class="wea-txt">40%</div>
+                        <div class="wea-txt">38%</div>
+                        <!-- <div id="hum" class="wea-txt">40%</div> -->
                         <div class="wea-descrip">HUMEDAD</div>
                     </div>
                 </div>
