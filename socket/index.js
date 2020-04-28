@@ -1,31 +1,23 @@
 const io = require('socket.io')(3000);
 const mysql = require('mysql2');
 
-async function Connect(){
-    try {
-        const connection = await mysql.createPool({
+// create the connection to database
+const connection = mysql.createPool({
             host: '127.0.0.1',
             user: 'logger',
             password: "energysystem",
-            database: 'ElectricalSystem'
+            database: 'ElectricalSystem',
+waitForConnections: true,
+  connectionLimit: 10,
+	queueLimit: 0
         });
-        console.log("connected to DB")
-        return connection;
-    }
-    catch (e) {
-        console.log("Error :", new Date())
-        throw e;
-    }
-}
-// create the connection to database
-const connection = Connect();
 
 const query = "SELECT Instantanea, Diaria, Mensual, Acumulada, Arboles, Co2, Hogares  FROM Fotovoltaico ORDER BY id DESC LIMIT 1";
 
 io.on('connection', socket => {
     console.log("Client connected");
     setInterval(() => {
-        connection.query(query, function(err, results, fields) {
+        connection.execute(query, function(err, results, fields) {
             // results contains rows returned by server
             const data = {
                 instantanea: results[0].Instantanea,
@@ -42,8 +34,8 @@ io.on('connection', socket => {
 
 
     socket.on("save-api-data", (data) => {
-        console.log("SAVING API DATA")
-        connection.query(`INSERT INTO Clima ( Temperatura, Viento, Humedad)
+        console.log("SAVING API DATA");
+        connection.execute(`INSERT INTO Clima ( Temperatura, Viento, Humedad)
         VALUES ( '${data.temp}','${data.viento}', '${data.humedad}');`);
     });
 
