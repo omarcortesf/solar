@@ -6,7 +6,7 @@ function API_weather() {
             url: 'http://api.openweathermap.org/data/2.5/weather?lat=20.5880600&lon=-100.3880600&appid=727b921beb636692dd0606184ecbc711',
             type: 'GET',
             success: function(result, status, xhr) {
-                var temperatura = Math.trunc(result.main.temp - 269);
+                var temperatura = Math.trunc(result.main.temp - 273);
                 var viento = result.wind.speed;
                 var humedad = result.main.humidity;
                 resolve({
