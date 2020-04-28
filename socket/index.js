@@ -1,4 +1,4 @@
-const io = require('socket.io')();
+const io = require('socket.io')(3000);
 const mysql = require('mysql2');
 
 async function Connect(){
@@ -51,5 +51,5 @@ io.on('connection', socket => {
 
 
 
-io.listen(8000);
+// io.listen(8000);
 console.log("Socket running in port 3000");
