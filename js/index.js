@@ -41,7 +41,7 @@ function API_weather() {
 function getAPIsData() {
     return new Promise(function(resolve, reject) {
         var prom1 = API_weather();
-        Promise.all([prom1, prom2])
+        // Promise.all([prom1, prom2])
         Promise.all([prom1])
             .then(result => {
                 const data = {
