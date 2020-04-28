@@ -2,7 +2,7 @@ const io = require('socket.io')();
 const mysql = require('mysql2');
 
 // create the connection to database
-const connection = mysql.createConnection({
+const connection = mysql.createPool({
     host: '127.0.0.1',
     user: 'logger',
     password: "energysystem",
