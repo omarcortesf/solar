@@ -41,9 +41,7 @@ function API_weather() {
 function getAPIsData() {
     return new Promise(function(resolve, reject) {
         var prom1 = API_weather();
-        // var prom2 = API_uv();
-
-        // Promise.all([prom1, prom2])
+        Promise.all([prom1, prom2])
         Promise.all([prom1])
             .then(result => {
                 const data = {
@@ -98,11 +96,8 @@ function connect2Socket() {
         console.log(data);
         setElectricData(data);
         getAPIsData().then(function(data) {
-                showModal();
-                //Ajuste de servidor
-
-                
-                // setApiDataInDom(data); 
+                showModal(); 
+                setApiDataInDom(data); 
                 uploadAPIData(data);
             })
             .catch(function(err) {
