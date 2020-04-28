@@ -3,7 +3,7 @@ const mysql = require('mysql2');
 
 async function Connect(){
     try {
-        const connection = await mysql.promise().createPool({
+        const connection = await mysql.createPool({
             host: '127.0.0.1',
             user: 'logger',
             password: "energysystem",
