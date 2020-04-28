@@ -1,13 +1,24 @@
 const io = require('socket.io')();
 const mysql = require('mysql2');
 
+async function Connect(){
+    try {
+        const connection = await mysql.promise().createPool({
+            host: '127.0.0.1',
+            user: 'logger',
+            password: "energysystem",
+            database: 'ElectricalSystem'
+        });
+        console.log("connected to DB")
+        return connection;
+    }
+    catch (e) {
+        console.log("Error :", new Date())
+        throw e;
+    }
+}
 // create the connection to database
-const connection = mysql.createPool({
-    host: '127.0.0.1',
-    user: 'logger',
-    password: "energysystem",
-    database: 'ElectricalSystem'
-});
+const connection = Connect();
 
 const query = "SELECT Instantanea, Diaria, Mensual, Acumulada, Arboles, Co2, Hogares  FROM Fotovoltaico ORDER BY id DESC LIMIT 1";
 
@@ -37,6 +48,7 @@ io.on('connection', socket => {
     });
 
 });
+
 
 
 io.listen(8000);
